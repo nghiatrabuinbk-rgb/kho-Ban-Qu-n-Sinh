@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'nghiatrabui.nbk@gmail.com'
+      );
+    }
+
+    // Test doc for connection check
+    match /test/{docId} {
+      allow read, write: if true;
+    }
+
+    // Boarding Rooms collection
+    match /rooms/{roomId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    // Students collection
+    match /students/{studentId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    // Attendance records collection
+    match /attendance/{attendanceId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    // Competition Evaluations collection
+    match /evaluations/{evalId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    // System configuration collection
+    match /system_config/{configId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    // Default catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

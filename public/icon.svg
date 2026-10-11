@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C5C" />
+      <stop offset="100%" stop-color="#092931" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+  <!-- Background with rounded squircle -->
+  <rect width="512" height="512" rx="100" fill="url(#bgGrad)" />
+  <rect x="16" y="16" width="480" height="480" rx="88" fill="none" stroke="#D97706" stroke-width="6" stroke-opacity="0.5" />
+  
+  <!-- Boarding House / School Icon -->
+  <path d="M256 96 L400 208 L400 400 A16 16 0 0 1 384 416 L128 416 A16 16 0 0 1 112 400 L112 208 Z" fill="#134E4A" stroke="url(#goldGrad)" stroke-width="12" />
+  
+  <!-- Roof Accent -->
+  <polygon points="256,70 430,206 414,226 256,102 98,226 82,206" fill="url(#goldGrad)" />
+  
+  <!-- Door / Gate -->
+  <path d="M216 416 L216 296 A40 40 0 0 1 296 296 L296 416 Z" fill="url(#goldGrad)" />
+  
+  <!-- Window Grid Left -->
+  <rect x="144" y="240" width="48" height="48" rx="6" fill="#F8FAFC" />
+  <line x1="168" y1="240" x2="168" y2="288" stroke="#0F4C5C" stroke-width="4" />
+  <line x1="144" y1="264" x2="192" y2="264" stroke="#0F4C5C" stroke-width="4" />
+  
+  <!-- Window Grid Right -->
+  <rect x="320" y="240" width="48" height="48" rx="6" fill="#F8FAFC" />
+  <line x1="344" y1="240" x2="344" y2="288" stroke="#0F4C5C" stroke-width="4" />
+  <line x1="320" y1="264" x2="368" y2="264" stroke="#0F4C5C" stroke-width="4" />
+
+  <!-- Academic Star -->
+  <polygon points="256,150 265,178 295,178 271,196 280,224 256,206 232,224 241,196 217,178 247,178" fill="url(#goldGrad)" />
+  
+  <!-- Banner Text Badge -->
+  <rect x="100" y="436" width="312" height="40" rx="8" fill="#F59E0B" />
+  <text x="256" y="462" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle" letter-spacing="1">TRÀ ĐỐC · NỘI TRÚ</text>
+</svg>

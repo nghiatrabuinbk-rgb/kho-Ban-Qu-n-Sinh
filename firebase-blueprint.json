@@ -1,0 +1,114 @@
+{
+  "entities": {
+    "Room": {
+      "title": "Room",
+      "description": "Boarding room entity representing one of the 25 rooms",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "gender": { "type": "string", "enum": ["nam", "nu"] },
+        "capacity": { "type": "number" },
+        "teacherEmail": { "type": "string" },
+        "teacherName": { "type": "string" }
+      },
+      "required": ["id", "name", "gender", "capacity"]
+    },
+    "Student": {
+      "title": "Student",
+      "description": "Student boarding resident with mountain village and hamlet info",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "roomId": { "type": "string" },
+        "fullName": { "type": "string" },
+        "gender": { "type": "string", "enum": ["nam", "nu"] },
+        "grade": { "type": "string" },
+        "village": { "type": "string" },
+        "nocHamlet": { "type": "string" },
+        "parentsName": { "type": "string" },
+        "phone": { "type": "string" },
+        "status": { "type": "string", "enum": ["dang_o", "tam_nghi", "chuyen_truong", "dac_biet"] },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "roomId", "fullName", "gender", "village"]
+    },
+    "Attendance": {
+      "title": "Attendance",
+      "description": "Morning and evening roll-call record with submission timestamp and ranking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "roomId": { "type": "string" },
+        "date": { "type": "string" },
+        "session": { "type": "string", "enum": ["morning", "evening"] },
+        "absentStudentIds": { "type": "array" },
+        "weekendRegistrations": { "type": "object" },
+        "submittedAt": { "type": "string" },
+        "submittedBy": { "type": "string" },
+        "isLate": { "type": "boolean" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "roomId", "date", "session", "submittedAt"]
+    },
+    "Evaluation": {
+      "title": "Evaluation",
+      "description": "Competition assessment including cleanliness, discipline, arts, sports and photo evidence",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "roomId": { "type": "string" },
+        "week": { "type": "number" },
+        "month": { "type": "number" },
+        "schoolRules": { "type": "number" },
+        "roomCleanliness": { "type": "number" },
+        "discipline": { "type": "number" },
+        "areaCleanliness": { "type": "number" },
+        "dutyWeek": { "type": "number" },
+        "artsRank": { "type": "string" },
+        "sportsRank": { "type": "string" },
+        "movementBonus": { "type": "number" },
+        "totalScore": { "type": "number" },
+        "evidenceImages": { "type": "array" },
+        "assessedBy": { "type": "string" },
+        "feedback": { "type": "string" }
+      },
+      "required": ["id", "roomId", "week", "totalScore"]
+    },
+    "SystemConfig": {
+      "title": "SystemConfig",
+      "description": "Global settings including school name, cutoff deadlines and teacher assignments",
+      "type": "object",
+      "properties": {
+        "adminEmail": { "type": "string" },
+        "schoolName": { "type": "string" },
+        "boardingManager": { "type": "string" },
+        "cutoffMorning": { "type": "string" },
+        "cutoffEvening": { "type": "string" }
+      },
+      "required": ["adminEmail", "schoolName"]
+    }
+  },
+  "firestore": {
+    "/rooms/{roomId}": {
+      "schema": { "$ref": "#/entities/Room" },
+      "description": "25 boarding room specifications and assigned teachers"
+    },
+    "/students/{studentId}": {
+      "schema": { "$ref": "#/entities/Student" },
+      "description": "Boarding students data"
+    },
+    "/attendance/{attendanceId}": {
+      "schema": { "$ref": "#/entities/Attendance" },
+      "description": "Daily morning and evening attendance records"
+    },
+    "/evaluations/{evaluationId}": {
+      "schema": { "$ref": "#/entities/Evaluation" },
+      "description": "Room competition ratings and proof photos"
+    },
+    "/system_config/{configId}": {
+      "schema": { "$ref": "#/entities/SystemConfig" },
+      "description": "Application configuration"
+    }
+  }
+}

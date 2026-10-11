@@ -1,0 +1,6 @@
+{
+  "summary":  "Kế hoạch kiến trúc và xây dựng Hệ thống Quản lý Nội trú Học sinh Trường PTDTBT THCS Trà Đốc: quản lý 25 phòng ở (12 nam, 13 nữ, ~375 học sinh), phân quyền Trưởng ban Admin / Giáo viên trực phòng / Ban quản sinh / BGH, điểm danh tự động 2 buổi sáng-tối có xếp hạng thứ tự nộp theo giờ phút, chấm điểm thi đua phong trào thể thao văn nghệ kèm minh chứng ảnh, xuất báo cáo đa định dạng Excel, Word, PDF theo ngày/tuần/tháng/năm.",
+  "updatedAt":  "2026-10-10T08:40:14.653667793Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

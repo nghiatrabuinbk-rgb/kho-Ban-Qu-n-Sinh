@@ -1,0 +1,8 @@
+{
+  "name": "Remix Quản Lý Nội Trú PTDTBT THCS Trà Đốc",
+  "description": "Hệ thống quản lý nội trú học sinh 25 phòng ở, điểm danh sáng tối, chấm điểm thi đua và xuất báo cáo - Trường PTDTBT THCS Xã Trà Đốc",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
