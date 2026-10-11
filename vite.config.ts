@@ -6,6 +6,7 @@ import {VitePWA} from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
   return {
+    baes:'/kho-Ban-Qu-n-Sinh/',
     plugins: [
       react(),
       tailwindcss(),
